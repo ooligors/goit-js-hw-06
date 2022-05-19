@@ -8,26 +8,24 @@ const ingredients = [
 ];
 
 
-
-
 const ulEl = document.querySelector('ul');
 
-
-
-ingredients.forEach((ingredient) => {
+const ingredientsHtml = ingredients.map((ingredient) => {
   const liEl = document.createElement('li');
   liEl.classList.add('item');
   liEl.textContent = `${ingredient}`
-  console.log(liEl);
 
-  ulEl.append(liEl)
-
-})
+  return liEl.outerHTML;
+}).join('');
 
 
-
+ulEl.innerHTML = ingredientsHtml;
 
 console.log(ulEl);
+
+
+
+
 
 
 
