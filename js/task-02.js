@@ -10,22 +10,17 @@ const ingredients = [
 
 const ulEl = document.querySelector('ul');
 
-const ingredientsHtml = ingredients.map((ingredient) => {
+const liArray = ingredients.map((ingredient) => {
   const liEl = document.createElement('li');
   liEl.classList.add('item');
   liEl.textContent = `${ingredient}`
+  console.log(liEl);
+  return liEl;
+});
 
-  return liEl.outerHTML;
-}).join('');
-
-
-ulEl.innerHTML = ingredientsHtml;
+ulEl.append(...liArray);
 
 console.log(ulEl);
-
-
-
-
 
 
 
